@@ -1,0 +1,16 @@
+<h1 class="text-center">Post recipe for <%= @cocktail.name %></h1>
+
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+
+    <%= simple_form_for [@cocktail, @dose] do |f| %>
+      <%= f.error_notification %>
+      <%= f.input :ingredient_id, as: :select, collection: Ingredient.all %>
+      <%= f.input :description, placeholder: "5 lemons..." %>
+      <%= f.submit "Create Dose", class: "btn btn-primary"%>
+    <% end %>
+
+    <%= link_to "Cancel", cocktail_path(@cocktail), :class => "btn btn-danger" %>
+    </div>
+  </div>

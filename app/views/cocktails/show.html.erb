@@ -3,9 +3,12 @@
 <!-- can do cocktail.ingredients becaue of the through  -->
 
 <% @cocktail.doses.each do |dose| %>
-  <p class="dose"><%= dose.description %></p>
+  <p class="dose"><%= dose.description %> <%= dose.ingredient.name %>
+  <%= link_to "Delete", dose_path(dose), method: :delete %> </p>
 <% end %>
 
-<p> <%= link_to "Edit Recipe", edit_cocktail_dose_path(@cocktail), :class => "btn btn-warning" %></p>
+<p> <%= link_to "Create Recipe", new_cocktail_dose_path(@cocktail), :class => "btn btn-warning" %></p>
+
+<p><%= link_to "Delete", cocktail_path(@cocktail), method: :delete %></p>
 
 <p> <%= link_to "Return to all cocktails", cocktails_path, :class => "btn btn-warning" %></p>
