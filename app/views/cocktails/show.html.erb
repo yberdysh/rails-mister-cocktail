@@ -1,0 +1,11 @@
+<h1> <%=@cocktail.name %></h1>
+
+<!-- can do cocktail.ingredients becaue of the through  -->
+
+<% @cocktail.doses.each do |dose| %>
+  <p class="dose"><%= dose.description %></p>
+<% end %>
+
+<p> <%= link_to "Edit Recipe", edit_cocktail_dose_path(@cocktail), :class => "btn btn-warning" %></p>
+
+<p> <%= link_to "Return to all cocktails", cocktails_path, :class => "btn btn-warning" %></p>
