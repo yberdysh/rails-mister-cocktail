@@ -6,6 +6,8 @@ class DosesController < ApplicationController
 
   def new
     @dose = Dose.new
+    @ingredients = Ingredient.all
+    @doses = Dose.all
   end
 
   def create
@@ -32,6 +34,6 @@ class DosesController < ApplicationController
   end
 
   def dose_params
-    params.require(:dose).permit(:description, :ingredient_id)
+    params.require(:dose).permit(:description, :ingredient_id, :measurement, :amount)
   end
 end

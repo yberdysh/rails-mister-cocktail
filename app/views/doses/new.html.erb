@@ -6,7 +6,14 @@
 
     <%= simple_form_for [@cocktail, @dose] do |f| %>
       <%= f.error_notification %>
-      <%= f.input :ingredient_id, as: :select, collection: Ingredient.all %>
+      <div class="dose">
+      <%= f.input :amount, as: :select, collection: ["1/8", "1/4", "1/3", "1/2", "2/3", "3/4", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"], selected: @doses.first, :class => "dose_item" %>
+
+       <%= f.input :measurement, as: :select, collection: ["oz", "tbs", "tsp", "pinch", "dash", "piece", "cube", "leaf", "slice"], selected: @doses.first, :class => "dose_item" %>
+
+      <%= f.input :ingredient_id, as: :select, collection: @ingredients.map{|ingredient| [ingredient.name, ingredient.id]}.sort, selected: @ingredients.first, :class => "dose_item" %>
+      </div>
+
       <%= f.input :description, placeholder: "5 lemons..." %>
       <%= f.submit "Create Dose", class: "btn btn-primary"%>
     <% end %>
