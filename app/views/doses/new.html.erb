@@ -1,6 +1,6 @@
 <h1 class="text-center">Post recipe for <%= @cocktail.name %></h1>
 
-
+  <div class="background-image">
     <%= simple_form_for [@cocktail, @dose], class: "form-inline" do |f| %>
       <%= f.error_notification %>
       <div class="dose">
@@ -21,13 +21,16 @@
           </div>
         </div>
         <div class="row">
+
           <div class="col-sm-1 col-sm-offset-5">
             <%= f.submit "Create Dose", class: "btn btn-primary"%>
           </div>
           <div class="col-sm-1">
             <%= link_to "Cancel", cocktail_path(@cocktail), :class => "btn btn-danger" %>
           </div>
+
         </div>
       <% end %>
+    </div>
 
 

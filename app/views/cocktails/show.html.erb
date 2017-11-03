@@ -4,10 +4,12 @@
 
 <% @cocktail.doses.each do |dose| %>
   <p class="dose"><%= dose.amount %> <%= dose.measurement %> <%= dose.ingredient.name %>
-  <%= link_to "Delete", dose_path(dose), method: :delete %> </p>
+  <%= link_to '<i class="fa fa-times" aria-hidden="true"></i>'.html_safe, dose_path(dose), method: :delete %> </p>
   <p> <%= dose.description %> </p>
 <% end %>
 
-<p> <%= link_to "Add to Recipe", new_cocktail_dose_path(@cocktail), :class => "btn btn-warning" %></p>
+
+
+<p> <%= link_to "Add to Recipe", new_cocktail_dose_path(@cocktail), :class => "btn btn-primary" %></p>
 
 <p> <%= link_to "Return to all cocktails", cocktails_path, :class => "btn btn-warning" %></p>
