@@ -1,8 +1,15 @@
-<h1>Check out all our Cocktails!</h1>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.unsplash.com/photo-1438522014717-d7ce32b9bab9?auto=format&fit=crop&w=1949&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D');">
+  <div class="banner-content">
+    <h1>Cocktail Recipes</h1>
+    <p>Create and store all of your cocktail recipes</p>
+    <a class="btn btn-warning btn-lg">Start now</a>
+  </div>
+</div>
 
-<%= link_to 'Add New Cocktail', new_cocktail_path %>
+<div class="background">
 
 <% @cocktails.each do |cocktail| %>
   <h2> <%=cocktail.name %></h2>
   <h4><%= link_to "See Recipe", cocktail_path(cocktail) %> <%= link_to "Delete", cocktail_path(cocktail), method: :delete %> </h4>
 <% end %>
+</div>

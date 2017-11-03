@@ -12,6 +12,21 @@
   </head>
 
   <body>
+    <div class="navbar-wagon">
+      <!-- Logo -->
+      <%= link_to cocktails_path do %>
+        <%= image_tag "logo.png", {class: "img-circle", id: "logo"} %>
+      <% end %>
+
+      <!-- Right Navigation -->
+      <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+        <%= link_to "Add a cocktail", new_cocktail_path(@cocktail), class: "navbar-wagon-item navbar-wagon-link" %>
+
+        <!-- Profile picture with dropdown list -->
+      </div>
+    </div>
+
     <%= yield %>
   </body>
 </html>
