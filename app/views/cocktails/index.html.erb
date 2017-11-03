@@ -6,10 +6,23 @@
   </div>
 </div>
 
+
+
 <div class="background">
 
-<% @cocktails.each do |cocktail| %>
-  <h2> <%=cocktail.name %></h2>
-  <h4><%= link_to "See Recipe", cocktail_path(cocktail) %> <%= link_to "Delete", cocktail_path(cocktail), method: :delete %> </h4>
-<% end %>
+  <div class="container">
+    <div class="row text-center">
+      <% @cocktails.each do |cocktail| %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=1007&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D');">
+            <div class="card-description">
+              <h2> <%=link_to cocktail.name, cocktail_path(cocktail) %></h2>
+              <h4><%= link_to "See Recipe", cocktail_path(cocktail) %> <%= link_to "Delete", cocktail_path(cocktail), method: :delete %> </h4>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
+
