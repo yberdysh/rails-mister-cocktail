@@ -8,8 +8,6 @@
   <p> <%= dose.description %> </p>
 <% end %>
 
-<p> <%= link_to "Create Recipe", new_cocktail_dose_path(@cocktail), :class => "btn btn-warning" %></p>
-
-<p><%= link_to "Delete", cocktail_path(@cocktail), method: :delete %></p>
+<p> <%= link_to "Add to Recipe", new_cocktail_dose_path(@cocktail), :class => "btn btn-warning" %></p>
 
 <p> <%= link_to "Return to all cocktails", cocktails_path, :class => "btn btn-warning" %></p>
