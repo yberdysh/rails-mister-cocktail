@@ -39,6 +39,7 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'figaro'
 gem 'cloudinary'
+gem 'carrierwave'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
